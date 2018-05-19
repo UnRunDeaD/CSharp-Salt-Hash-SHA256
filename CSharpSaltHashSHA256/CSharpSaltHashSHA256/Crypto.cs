@@ -17,6 +17,7 @@ namespace CSharpSaltHashSHA256
             return hex.ToString();
         }
 
+        //Create a Salt, it is recommended to set this Value to Unique in your Database
         public static String CreateSalt(int length)
         {
             var rng = new System.Security.Cryptography.RNGCryptoServiceProvider();
@@ -26,6 +27,7 @@ namespace CSharpSaltHashSHA256
             return Convert.ToBase64String(buff);
         }
 
+        //This Hash can be used few Times, it isn´t bad if this Value is more then one time in your Database
         public static String HashToSHA256(string password, string salt)
         {
             byte[] bytes = System.Text.Encoding.UTF8.GetBytes(password + salt);
