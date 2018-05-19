@@ -10,6 +10,8 @@ namespace CSharpSaltHashSHA256
     {
         static void Main(string[] args)
         {
+            string salt = Crypto.CreateSalt(25);
+            string hashpassword = Crypto.HashToSHA256("password", salt);
         }
     }
 }

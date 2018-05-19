@@ -17,7 +17,7 @@ namespace CSharpSaltHashSHA256
             return hex.ToString();
         }
 
-        private static String CreateSalt(int length)
+        public static String CreateSalt(int length)
         {
             var rng = new System.Security.Cryptography.RNGCryptoServiceProvider();
             var buff = new byte[length];
